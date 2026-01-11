@@ -6,7 +6,7 @@ import io.github.santiago120600.moneytracker.data.local.entity.Installment
 @Dao
 interface InstallmentDAO {
     @Query("SELECT * FROM installment ORDER BY id ASC")
-    fun getInstallmentList(): List<Installment>
+    suspend fun getInstallmentList(): List<Installment>
 
     @Query("SELECT * FROM installment WHERE id = :id")
     suspend fun getInstallmentById(id: Int): Installment

@@ -6,7 +6,7 @@ import io.github.santiago120600.moneytracker.data.local.entity.Transfer
 @Dao
 interface TransferDAO {
     @Query("SELECT * FROM transfer ORDER BY id ASC")
-    fun getTransferList(): List<Transfer>
+    suspend fun getTransferList(): List<Transfer>
 
     @Query("SELECT * FROM transfer WHERE id = :id")
     suspend fun getTransferById(id: Int): Transfer

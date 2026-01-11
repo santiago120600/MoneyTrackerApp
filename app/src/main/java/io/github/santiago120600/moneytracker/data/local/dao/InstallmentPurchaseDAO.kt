@@ -6,7 +6,7 @@ import io.github.santiago120600.moneytracker.data.local.entity.InstallmentPurcha
 @Dao
 interface InstallmentPurchaseDAO {
     @Query("SELECT * FROM installment_purchase ORDER BY id ASC")
-    fun getInstallmentPurchaseList(): List<InstallmentPurchase>
+    suspend fun getInstallmentPurchaseList(): List<InstallmentPurchase>
 
     @Query("SELECT * FROM installment_purchase WHERE id = :id")
     suspend fun getInstallmentPurchaseById(id: Int): InstallmentPurchase

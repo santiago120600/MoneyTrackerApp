@@ -6,7 +6,7 @@ import io.github.santiago120600.moneytracker.data.local.entity.Transaction
 @Dao
 interface TransactionDAO {
     @Query("SELECT * FROM money_transaction ORDER BY id ASC")
-    fun getTransactionList(): List<Transaction>
+    suspend fun getTransactionList(): List<Transaction>
 
     @Query("SELECT * FROM money_transaction WHERE id = :id")
     suspend fun getTransactionById(id: Int): Transaction

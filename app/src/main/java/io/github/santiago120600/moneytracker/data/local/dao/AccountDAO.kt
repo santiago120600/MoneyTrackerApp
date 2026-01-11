@@ -12,7 +12,7 @@ interface AccountDAO {
 
     @Transaction
     @Query("SELECT * FROM account")
-    fun getAccountsWithTransactions(): List<AccountWithTransactions>
+    suspend fun getAccountsWithTransactions(): List<AccountWithTransactions>
 
     @Insert suspend fun insertAccount(account: Account)
 
